@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh; overflow-x:hidden; color:#5b3150;
+  font-family:'Fredoka',sans-serif;
+  background:linear-gradient(135deg,#fff1f8,#ffe5f1 45%,#f7e9ff);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:24px 24px;
+}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.heart{position:absolute;bottom:-50px;animation:floatUp linear forwards;opacity:.85}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.page{position:relative;z-index:2;min-height:100vh;padding:28px 16px 70px}
+.card{
+  width:min(940px,100%);margin:auto;background:rgba(255,255,255,.72);
+  border:2px solid rgba(255,255,255,.9);border-radius:36px;
+  box-shadow:0 25px 70px rgba(145,74,120,.18);backdrop-filter:blur(15px);
+  overflow:hidden;
+}
+.hero{text-align:center;padding:52px 22px 34px}
+.badge{display:inline-block;padding:9px 17px;border-radius:99px;background:#fff;color:#d65d99;font-weight:600;box-shadow:0 8px 25px #d65d9918}
+h1{font-family:'Pacifico',cursive;font-size:clamp(48px,10vw,92px);line-height:1.1;margin:18px 0 8px;color:#d84f92;text-shadow:4px 5px 0 #fff}
+.subtitle{font-size:clamp(17px,3vw,23px);color:#86516f}
+.bear-wrap{height:235px;display:flex;justify-content:center;align-items:center;position:relative;margin:15px 0}
+.bear{
+  position:relative;width:150px;height:130px;background:#c98f67;border-radius:50% 50% 45% 45%;
+  box-shadow:inset -10px -10px #b97e5d,0 18px 30px #7d416126;
+}
+.ear{position:absolute;width:50px;height:50px;background:#c98f67;border-radius:50%;top:-17px}
+.ear:after{content:"";position:absolute;inset:11px;background:#efb0ad;border-radius:50%}
+.ear.left{left:4px}.ear.right{right:4px}
+.eye{position:absolute;width:12px;height:16px;background:#43283a;border-radius:50%;top:50px}
+.eye.left{left:45px}.eye.right{right:45px}
+.blush{position:absolute;width:27px;height:13px;background:#f39db5;border-radius:50%;top:69px;opacity:.75}
+.blush.left{left:20px}.blush.right{right:20px}
+.muzzle{position:absolute;width:62px;height:48px;background:#efc2a2;border-radius:50%;left:44px;top:62px}
+.nose{position:absolute;width:17px;height:12px;background:#43283a;border-radius:50%;left:67px;top:72px}
+.mouth{position:absolute;width:27px;height:14px;border-bottom:3px solid #43283a;border-radius:0 0 50% 50%;left:61px;top:83px}
+.tear{position:absolute;width:8px;height:18px;background:#83d8ff;border-radius:60% 60% 60% 0;transform:rotate(45deg);top:68px}
+.tear.left{left:42px}.tear.right{right:42px}
+.flower{position:absolute;font-size:35px;animation:bob 2s ease-in-out infinite}
+.f1{left:20%;top:12%}.f2{right:19%;top:22%;animation-delay:.6s}
+@keyframes bob{50%{transform:translateY(-10px) rotate(7deg)}}
+.message{margin:0 22px 28px;padding:30px;line-height:1.8;font-size:17px;text-align:center;background:#fff8fc;border-radius:25px;border:1px solid #ffd7e9}
+.message strong{color:#d64e91}
+.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:0 20px 35px}
+button{
+  border:0;border-radius:99px;padding:15px 25px;font:600 16px 'Fredoka';cursor:pointer;
+  transition:.25s;box-shadow:0 10px 22px #8c4b6c1c
+}
+.primary{background:#e85b9b;color:#fff}
+.secondary{background:#fff;color:#bd4c83}
+button:hover{transform:translateY(-4px) scale(1.03)}
+button:active{transform:scale(.96)}
+.surprise{
+  max-height:0;overflow:hidden;transition:max-height .8s ease, padding .8s ease;
+  text-align:center;background:linear-gradient(135deg,#fff0f7,#f8edff);padding:0 25px
+}
+.surprise.open{max-height:420px;padding:35px 25px}
+.surprise h2{font-family:'Pacifico';font-size:38px;color:#d84f92;margin-bottom:12px}
+.quote{font-size:18px;line-height:1.7}
+.footer{text-align:center;padding:25px;color:#9a6b86;font-size:14px}
+.music-note{position:fixed;right:16px;bottom:16px;z-index:30;width:52px;height:52px;border-radius:50%;padding:0;background:#fff;color:#d84f92;font-size:21px}
+.toast{
+  position:fixed;left:50%;bottom:88px;transform:translate(-50%,30px);opacity:0;
+  z-index:40;background:#5b3150;color:#fff;padding:13px 20px;border-radius:99px;
+  transition:.35s;pointer-events:none;white-space:nowrap
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:560px){
+ .hero{padding-top:38px}.message{font-size:15.5px;padding:23px}
+ .bear-wrap{height:205px}.flower{font-size:27px}.actions button{width:85%}
+}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+
+<button class="music-note" id="musicBtn" title="Cute sound">♪</button>
+<div class="toast" id="toast">You just made my heart happy 🥹💗</div>
+
+<main class="page">
+<section class="card">
+  <div class="hero">
+    <span class="badge">💌 A tiny apology from my heart</span>
+    <h1>I'm Sorry…</h1>
+    <p class="subtitle">for misunderstanding you 🥺💗</p>
+
+    <div class="bear-wrap">
+      <span class="flower f1">🌷</span>
+      <span class="flower f2">🌸</span>
+      <div class="bear">
+        <div class="ear left"></div><div class="ear right"></div>
+        <div class="eye left"></div><div class="eye right"></div>
+        <div class="tear left"></div><div class="tear right"></div>
+        <div class="blush left"></div><div class="blush right"></div>
+        <div class="muzzle"></div><div class="nose"></div><div class="mouth"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <p>
+      Heyy… 🥺💗<br><br>
+      I’m genuinely sorry for misunderstanding you. I think I misunderstood the situation
+      and reacted based on what I thought instead of what you actually meant.
+      I never wanted to make you feel bad, upset, or misunderstood in return. 😭
+      <br><br>
+      Sometimes my brain really decides to create an entire movie from one tiny
+      misunderstanding 💀😭 and this time… yeah, it definitely did.
+      <br><br>
+      I hope you can forgive me. 🥹👉👈 I really do value you and our bond,
+      and I’d hate for one silly misunderstanding to create distance between us.
+      <br><br>
+      <strong>So, from the bottom of my heart… I’m really, really sorry. 🫶🏻💗</strong>
+      <br><br>
+      No excuses. Just a genuine little apology from me to you. 🌷
+    </p>
+  </div>
+
+  <div class="actions">
+    <button class="primary" onclick="forgive()">💗 I Forgive You</button>
+    <button class="secondary" onclick="burst()">🥺 Send a Hug</button>
+  </div>
+
+  <div class="surprise" id="surprise">
+    <h2>YAYYY! 🥹💞</h2>
+    <p class="quote">
+      Thank you for giving me another chance.<br>
+      Consider this website a digital hug, a bouquet of flowers,
+      and approximately <b>1,000,000 tiny sorrys</b> wrapped together. 🫂🌷<br><br>
+      <b>You're genuinely important to me. 💗</b>
+    </p>
+  </div>
+
+  <div class="footer">Made with a guilty little heart ♡ · Please forgive me 🥺</div>
+</section>
+</main>
+
+<script>
+const hearts=document.getElementById('hearts');
+const emojis=['💗','💕','💖','💞','🌸','🌷','✨','🩷'];
+
+function makeHeart(){
+  const h=document.createElement('span');
+  h.className='heart';
+  h.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(15+Math.random()*22)+'px';
+  h.style.animationDuration=(5+Math.random()*6)+'s';
+  hearts.appendChild(h);
+  setTimeout(()=>h.remove(),12000);
+}
+setInterval(makeHeart,550);
+for(let i=0;i<12;i++) setTimeout(makeHeart,i*180);
+
+function burst(){
+  for(let i=0;i<35;i++) setTimeout(makeHeart,i*35);
+  toast('A giant virtual hug is on its way! 🫂💗');
+  sound(520,0.12);
+}
+
+function forgive(){
+  document.getElementById('surprise').classList.add('open');
+  for(let i=0;i<65;i++) setTimeout(makeHeart,i*25);
+  toast('You just made my heart happy 🥹💗');
+  sound(660,0.15);
+  setTimeout(()=>sound(880,0.15),130);
+  window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+}
+
+function toast(text){
+  const t=document.getElementById('toast'); t.textContent=text;
+  t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+let audioCtx;
+function sound(freq,dur){
+  try{
+    audioCtx ||= new (window.AudioContext||window.webkitAudioContext)();
+    const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+    o.frequency.value=freq;o.type='sine';g.gain.setValueAtTime(.0001,audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(.06,audioCtx.currentTime+.02);
+    g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+dur);
+    o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+dur);
+  }catch(e){}
+}
+document.getElementById('musicBtn').onclick=()=>{
+  sound(523,.12);setTimeout(()=>sound(659,.12),100);setTimeout(()=>sound(784,.18),200);
+  toast('A tiny happy melody just for you 🎵💗');
+};
+</script>
+</body>
+</html>
